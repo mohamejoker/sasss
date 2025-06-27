@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 330 80% 60%;
+  --primary-foreground: 330 30% 98%;
+  --secondary: 270 50% 95%;
+  --secondary-foreground: 270 50% 10%;
+  --muted: 270 50% 95%;
+  --muted-foreground: 270 10% 45%;
+  --accent: 330 70% 96%;
+  --accent-foreground: 330 80% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 330 20% 85%;
+  --input: 330 20% 85%;
+  --ring: 330 80% 60%;
+  --background: 0 0% 100%;
+  --foreground: 270 10% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 270 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 270 10% 15%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --primary: 330 80% 70%;
+  --primary-foreground: 330 30% 10%;
+  --secondary: 270 30% 20%;
+  --secondary-foreground: 270 30% 98%;
+  --muted: 270 30% 20%;
+  --muted-foreground: 270 10% 65%;
+  --accent: 330 50% 25%;
+  --accent-foreground: 330 50% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 270 30% 25%;
+  --input: 270 30% 25%;
+  --ring: 330 80% 70%;
+  --background: 270 20% 10%;
+  --foreground: 270 20% 98%;
+  --card: 270 20% 10%;
+  --card-foreground: 270 20% 98%;
+  --popover: 270 20% 10%;
+  --popover-foreground: 270 20% 98%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  direction: rtl;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #f78fb3 0%, #e5b2ca 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f78fb3 0%, #e5b2ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-pattern {
+  background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0),
+                    radial-gradient(circle at 75px 75px, rgba(255,255,255,0.1) 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+.product-card-hover {
+  transition: all 0.3s ease;
+}
+
+.product-card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dark .product-card-hover:hover {
+  box-shadow: 0 20px 40px rgba(247, 143, 179, 0.15);
+}
